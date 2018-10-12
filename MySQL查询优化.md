@@ -1,3 +1,4 @@
 # MySQL查询优化
 ## 为什么要使用索引？
 在不使用索引的情况，查询数据需要逐行扫描，在数据量很大的情况必然会很浪费时间。而使用索引后，通过索引能够得知匹配数据的位置，大大提高查询效率。
+![数据表ad](https://github.com/qinchunabng/ReadingNotes/blob/master/images/table_ad.png "没有索引的数据表ad")
