@@ -76,3 +76,4 @@ SpringBoot有些库会使用缓存来提供性能，比如模板引擎会缓存�
 ### 自动重启
 spring-boot-devtools将会自动重启当classpath目录下的文件有变化时。默认情况下，会监控classpath目录下的所有文件。
 >**怎么样触发重启？** 只有classpath下文件更新才会重发重启。eclipse里面保存一个被修改的文件将会是classpath下的文件更新，在IntelliJ IDEA中编译项目(Build -> Build Project) 也会更新classpath下的文件。
+>DevTools是基于application context shutdown钩子的，如果你你关闭这个钩子(SpringApplication.setRegisterShutdownHook(false))DevTools将无法正常工作。
