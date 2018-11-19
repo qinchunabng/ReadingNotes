@@ -80,4 +80,10 @@ spring-boot-devtools将会自动重启当classpath目录下的文件有变化时
    >DevTools是基于application context shutdown钩子的，如果你关闭这个钩子(SpringApplication.setRegisterShutdownHook(false))DevTools将无法正常工作。DevTools将自动忽略项目名称为spring-boot, spring-boot-devtools, spring-boot-autoconfigure, spring-boot-actuator, and spring-boot-starter。
 
    >Restart技术是通过SpringBoot提供的两个classloader实现的。不会变化的classes（比如第三方jar）加载到base classloader，当前正在开发的classes会加载到restart classloader。当应用重启时旧的restart classloader会被抛弃然后重新创建一个。这种方式方式会冷加载快很多。
+   
+   1. 有些文件变化后不需要重启，比如Thymeleaf模板。默认情况下， /META-INF/maven, /META-INF/resources, /resources, /static, /public, or /templates目录下的文件变化后不会触发重启但是会实时加载。可以通过spring.devtools.restart.exclude属性来自定义不需要触发重启的目录。
+      ```
+      spring.devtools.restart.exclude=static/**,public/**
+      ```
+      >如果你希望保留默认配置的情况下再添加一些配置，可以通过spring.devtools.restart.additional-exclude属性设置。
 
