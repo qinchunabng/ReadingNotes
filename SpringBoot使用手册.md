@@ -69,11 +69,11 @@ SpringBoot提供了一些开发工具在开发环境中使用，引入SpringBoot
 	</dependency>
 </dependencies>
 ```
-### spring-boot-devtools的默认属性
+1. spring-boot-devtools的默认属性
 SpringBoot有些库会使用缓存来提供性能，比如模板引擎会缓存编译结果来避免重复的转换。但是在开发环境中这种缓存是没有必要的，所以spring-boot-devtools默认关闭了这些缓存。你可以在你的application.properties配置文件中，定义这些缓存行为，比如：Thymeleaf缓存通过spring.thymeleaf.cache属性控制。 
 在开发环境中你可能需要详细请求信息，devtools默认将web logging group的日志级别设置为DEBUG，如果你需要更详细的请求和响应信息，你可以设置spring.http.log-request-details配置属性为true。
 
-### 自动重启
+1. 自动重启
 spring-boot-devtools将会自动重启当classpath目录下的文件有变化时。默认情况下，会监控classpath目录下的所有文件。
 >**怎么样触发重启？** 只有classpath下文件更新才会重发重启。eclipse里面保存一个被修改的文件将会是classpath下的文件更新，在IntelliJ IDEA中编译项目(Build -> Build Project) 也会更新classpath下的文件。
 
