@@ -64,4 +64,4 @@
 SELECT * FROM tbl_name WHERE FALSE;
 ```
 在这个例子里面，MySQL查看WHERE子句，并且意识没有数据行可以符合查询的条件，因此根据就没有检索数据表。可以通过EXPLAIN语句来证明这一点：
-![Image of mysql explain](https://github.com/qinchunabng/ReadingNotes/blob/master/images/mysql_explain.png)
+ ![Image of mysql explain](https://github.com/qinchunabng/ReadingNotes/blob/master/images/mysql_explain.png)
